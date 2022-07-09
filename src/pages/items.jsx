@@ -10,7 +10,7 @@ const Items = () => {
         try {
             async function fetchMyAPI() {
                 setLoading(true);
-                const response = await fetch(`http://hn.algolia.com/api/v1/items/${id}`);
+                const response = await fetch(`https://hn.algolia.com/api/v1/items/${id}`);
                 const res = await response.json();
                 console.log(res);
                 setOb(res);
