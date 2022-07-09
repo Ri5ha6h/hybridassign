@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="w-screen h-screen m-0">
         <Navbar/>
-        <div className="relative top-24">
+        <div className="relative z-10 pb-20 top-20">
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/item/:id" element={<Items/>} />

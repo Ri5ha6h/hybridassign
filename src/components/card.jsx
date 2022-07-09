@@ -26,23 +26,24 @@ const Card = () => {
     }, [query]);
 
     return (
-        <div className="w-[80%]">
+        <div className="w-[80%] h-full mx-auto mt-20">
             {loading ? (
-                <div>loading...</div>
+                <div className="flex items-center justify-center h-full">loading...</div>
             ) : (
-                <div className="flex flex-wrap justify-around items-center gap-4">
+                <div className="flex flex-wrap items-center justify-around gap-4">
                     {" "}
                     {val &&
                         val.hits.map((item, index) => (
-                            <div key={index} className="w-40 h-20 text-center text-white bg-gray-400">
-                                <p>{item.author}</p>
-                                <div className="mt-5">
-                                    <a className="p-2 ml-3 bg-green-400" href={item.url} target="_blank">
-                                        blog
-                                    </a>
-                                    <Link to={`/item/${item.objectID}`}>obj</Link>
+                            <Link to={`/item/${item.objectID}`} key={index}>
+                                <div className="border border-gray-400 rounded-sm h-36 w-60">
+                                    <div className="flex items-center h-10 pl-4 capitalize bg-gray-300 border-b border-gray-300">
+                                        <p>{item.author}</p>
+                                    </div>
+                                    <div className="p-5">
+                                        <p className="line-clamp-2">{item.title}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                 </div>
             )}
