@@ -13,7 +13,7 @@ const Card = () => {
                     return;
                 } else {
                     setLoading(true);
-                    const response = await fetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
+                    const response = await fetch(`https://hn.algolia.com/api/v1/search?query=${query}`);
                     const res = await response.json();
                     setVal(res);
                     setLoading(false);
