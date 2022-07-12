@@ -14,7 +14,7 @@ const Home = () => {
                     className="relative flex justify-center w-full mt-6"
                     onSubmit={(e) => {
                         e.preventDefault();
-                        dispatch(storeQuery(e.target[0].value));
+                        dispatch(storeQuery(e.target[0].value.toLowerCase()));
                         // setInp("");
                     }}
                 >
